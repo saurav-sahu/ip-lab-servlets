@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/greet")
-public class Greet extends HttpServlet
+@WebServlet(urlPatterns = "/api/greet")
+public class GreetController extends HttpServlet
 {
 	private static final long serialVersionUID = 4426880007296241022L;
 
@@ -16,7 +16,7 @@ public class Greet extends HttpServlet
 	{
 		String name = req.getParameter("userName");
 		String responseText = name == null || name.trim().compareTo("") == 0 ?
-				"Who are you?" : String.format("Hello there, %s..", name.trim());
+				"Who are you?" : String.format("Hello there, %s.", name.trim());
 		res.getWriter().println(responseText);
 	}
 }
