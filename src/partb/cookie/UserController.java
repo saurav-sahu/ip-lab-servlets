@@ -6,12 +6,14 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginController extends HttpServlet {
+@WebServlet(urlPatterns ="/user")
+public class UserController extends HttpServlet {
 
 	private static final long serialVersionUID = -1869005753410250996L;
 
@@ -23,6 +25,6 @@ public class LoginController extends HttpServlet {
 		
 		if(cookies.containsKey("USERNAME"))
 			res.getWriter().println("Welcome back, "+ cookies.get("USERNAME")+ ".");
-		else res.addHeader("Location", req.getServerName()+ "/ip-lab-servlets/12/login.html");
+		else res.addHeader("Location", req.getServerName()+ "/ip/12/login.html");
 	}
 }

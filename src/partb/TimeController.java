@@ -12,7 +12,7 @@ import util.TimeHelper;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
-@WebServlet(urlPatterns = "/api/time")
+@WebServlet({"/api/time", "/11"})
 public class TimeController extends HttpServlet{
 
 	String format = "<html><head><title>Greeting based on Time</title></head><body><h1>%s</h1></body></html>";
